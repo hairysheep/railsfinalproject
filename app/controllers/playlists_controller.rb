@@ -21,6 +21,12 @@ class PlaylistsController < ApplicationController
   def edit
   end
 
+  def addSong
+    playlist = Playlist.find(params[:id])
+    puts(params[:songid])
+    playlist.songs << Song.find(params[:songid])
+  end
+
   # POST /playlists
   # POST /playlists.json
   def create

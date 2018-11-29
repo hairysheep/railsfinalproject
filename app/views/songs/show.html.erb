@@ -10,6 +10,8 @@
   <%= @song.url %>
 </p>
 
+<iframe width="560" height="315" src= <%= @song.url %> frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>

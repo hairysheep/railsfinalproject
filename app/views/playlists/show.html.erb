@@ -3,9 +3,15 @@
 <p>
   <strong>Name:</strong>
   <%= @playlist.name %>
-  <%= @playlist.songs %>
+  <% @playlist.songs.all.each do |song| %>
+  	<% if song.title %>
+  		<p> Song: <%= song.title %> </p>
+  		<iframe width="560" height="315" src= <%= song.url %> frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  	<% end %>
+  <% end %>
 </p>
 
+<%= button_to "Add a song", addSong_path(id: @playlist, songid: 3), :class => "button medium", :method => :patch %>
 
 <%= link_to 'Edit', edit_playlist_path(@playlist) %> |
 <%= link_to 'Back', playlists_path %>
