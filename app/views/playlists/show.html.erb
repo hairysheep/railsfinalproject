@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @playlist.name %>
+  <div style="text-align: center"><%= @playlist.name %></div>
   <% @playlist.songs.all.each do |song| %>
+  <div style="text-align: center">
   	<% if song.title %>
-  		<p> Song: <%= song.title %> </p>
+  		<p > Song: <%= song.title %> </p>
   		<iframe width="560" height="315" src= <%= song.url %> frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   	<% end %>
+    </div>
   <% end %>
 </p>
 

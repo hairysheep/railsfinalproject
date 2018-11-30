@@ -25,6 +25,7 @@ class PlaylistsController < ApplicationController
     playlist = Playlist.find(params[:id])
     puts(params[:songid])
     playlist.songs << Song.find(params[:songid])
+    redirect_to "/playlists/#{playlist.id}"
   end
 
   # POST /playlists
